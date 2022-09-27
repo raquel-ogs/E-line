@@ -1,7 +1,7 @@
 import { useNavigation } from '@react-navigation/native';
 import React,{useEffect, useState} from 'react'
 import { StyleSheet, Text, View, TouchableOpacity,Button} from 'react-native';
-import firebase from '../../firebaseConnection'
+import firebase from '../../../config'
 
 
 
