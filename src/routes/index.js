@@ -16,8 +16,9 @@ export default function App() {
           tabBarShowLabel:true,
           tabBarLabelStyle:{
             fontFamily: 'Trap-Medium',
-            fontSize: 15,
-            marginBottom: 10
+            fontSize: 13,
+            marginBottom: 10,
+            position: 'relative'
           },
           tabBarActiveTintColor:"#720CF7",
           tabBarInactiveTintColor:'#707070',
@@ -29,26 +30,26 @@ export default function App() {
        >
           <Tab.Screen name = "Home" component={Routes} 
           options = 
-          {{tabBarIcon: ({color,size}) => {
-            return <Octicons name="home" size={size} color={color}/>
+          {{tabBarIcon: ({color}) => {
+            return <Octicons name="home" size={32} color={color}/>
           }}}/>
 
           <Tab.Screen name = "Novidades" component={Novidades} options = {{
             tabBarIcon:({color,size}) => {
-              return   <MaterialCommunityIcons name="bell-outline" size={size} color={color} />
+              return   <MaterialCommunityIcons name="bell-outline" size={32} color={color} />
             }
           }}
           />
-          <Tab.Screen name ="Alunos" component ={Alunos}
+          <Tab.Screen name ="Alunos" component ={Cadastrar}
             options = 
             {{tabBarIcon: ({color,size}) => {
-              return <MaterialIcons name="person-outline" size={size} color={color} />
+              return <MaterialIcons name="person-outline" size={35} color={color} />
             } }}
           />
           <Tab.Screen name ="Conta" component ={Conta}
             options = 
             {{tabBarIcon: ({color,size}) => {
-            return <Ionicons name="ios-settings-outline" size={size} color={color} />
+            return <Ionicons name="ios-settings-outline" size={32} color={color} />
             } 
           }}
           />
