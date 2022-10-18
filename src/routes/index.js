@@ -43,26 +43,43 @@ export default function App() {
        >
           <Tab.Screen name = "Home" component={Routes} 
           options = 
+<<<<<<< HEAD
           {{tabBarIcon: ({color,size}) => {
             return <Octicons name="home" size={'3.2vh'} color={color}/>
+=======
+          {{tabBarIcon: ({color}) => {
+            return <Octicons name="home" size={32} color={color}/>
+>>>>>>> d9f4a5a9e152ae963e8425e3f46aa9f3221b9ddb
           }}}/>
 
           <Tab.Screen name = "Novidades" component={Novidades} options = {{
             tabBarIcon:({color,size}) => {
+<<<<<<< HEAD
               return   <MaterialCommunityIcons name="bell-outline" size={'3.2vh'} color={color} />
+=======
+              return   <MaterialCommunityIcons name="bell-outline" size={32} color={color} />
+>>>>>>> d9f4a5a9e152ae963e8425e3f46aa9f3221b9ddb
             }
           }}
           />
-          <Tab.Screen name ="Alunos" component ={Alunos}
+          <Tab.Screen name ="Alunos" component ={Cadastrar}
             options = 
             {{tabBarIcon: ({color,size}) => {
+<<<<<<< HEAD
               return <MaterialIcons name="person-outline" size={'3.5vh'} color={color} />
+=======
+              return <MaterialIcons name="person-outline" size={35} color={color} />
+>>>>>>> d9f4a5a9e152ae963e8425e3f46aa9f3221b9ddb
             } }}
           />
           <Tab.Screen name ="Conta" component ={Conta}
             options = 
             {{tabBarIcon: ({color,size}) => {
+<<<<<<< HEAD
             return <Ionicons name="ios-settings-outline" size={'3.2vh'} color={color} />
+=======
+            return <Ionicons name="ios-settings-outline" size={32} color={color} />
+>>>>>>> d9f4a5a9e152ae963e8425e3f46aa9f3221b9ddb
             } 
           }}
           />
