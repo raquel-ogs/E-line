@@ -65,8 +65,8 @@ return(
                 </View>
             </TouchableOpacity>
         </View>
-         <Text>{nome}</Text>
-         <Text>{idade}</Text>
+         {/* <Text>{nome}</Text>
+         <Text>{idade}</Text> */}
      </View>
 
 );
