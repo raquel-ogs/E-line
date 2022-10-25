@@ -16,7 +16,7 @@ export default function App() {
           tabBarShowLabel:true,
           tabBarLabelStyle:{
             fontFamily: 'Trap-Medium',
-            fontSize: 15,
+            fontSize: 13,
             marginBottom: 10,
             position: 'relative'
           },

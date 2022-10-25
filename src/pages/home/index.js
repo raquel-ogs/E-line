@@ -1,29 +1,36 @@
 import { useNavigation } from '@react-navigation/native';
 import React,{useEffect, useState} from 'react'
-import { StyleSheet, Text, View, TouchableOpacity, } from 'react-native';
-import {MaterialIcons, Feather,} from '@expo/vector-icons'
+import { StyleSheet, Text, View, } from 'react-native';
 import firebase from '../../../config'
-import Header from '../../components/header';
+import Header from '../../components/header-home';
+import listarAluno from '../../components/list';
+import Icons from '../../components/icons';
+import { FlatList } from 'react-native-gesture-handler';
 
 export default function Home(){
-const [nome,setNome] = useState ('');
-const [idade,setIdade] = useState ('');
 
+const [alunos, setAlunos] = useState([]);
 
 useEffect(()=>{
+    async function buscarAlunos(){
+        await firebase.database().ref('Alunos').on('value',(snapshot)=> {
+            snapshot.forEach((childItem) => {
+                var data = {
+                    key: childItem.key,
+                    nome: childItem.val().Nome,
+                    turma: childItem.val().Turma,
+                    nota1: childItem.val().Nota1,
+                    nota2: childItem.val().Nota2,
+                    nota3: childItem.val().Nota3,
+                    imagem: childItem.val().Imagem,
 
-async function buscarDados(){
-
-    await firebase.database().ref('Alunos/1/nome').on('value',(snapshot)=> {
-        setNome(snapshot.val())
-    });
-    await firebase.database().ref('Alunos/1/idade').on('value',(snapshot)=> {
-        setIdade(snapshot.val()) 
-    });
-
+                };
+                setAlunos(alunos=>[...alunos,data]);
+            })
+        });
 }
 
-buscarDados();
+buscarAlunos();
 
 },[])
 
@@ -31,42 +38,20 @@ buscarDados();
 return(
      <View style = {{alignItems:'center'}}>
         <Header/>
-        <View style={styles.container}>
-            <TouchableOpacity style={styles.containerIcon}>
-                <View style={styles.icon}>
-                    <MaterialIcons name="add" size={'3.7vh'} color="#720CF7" />
-                </View>
-                <View>
-                    <Text style={{fontFamily: 'Trap-Bold', fontSize: 13, marginTop: 10}}> Adicionar</Text>
-                </View>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.containerIcon}>
-                <View style={styles.icon}>
-                    <Feather name="edit" size={'3.2vh'} color="#720CF7" />
-                </View>
-                <View>
-                    <Text style={{fontFamily: 'Trap-Bold', fontSize: 13, marginTop: 10}}> Editar </Text>
-                </View>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.containerIcon}>
-                <View style={styles.icon}>
-                    <Feather name="trash" size={'3.2vh'} color="#720CF7" />
-                </View>
-                <View>
-                    <Text style={{fontFamily: 'Trap-Bold', fontSize: 13, marginTop: 10}}> Excluir </Text>
-                </View>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.containerIcon}>
-                <View style={styles.icon}>
-                    <Feather name="clipboard" size={'3.2vh'} color="#720CF7" />
-                </View>
-                <View>
-                    <Text style={{fontFamily: 'Trap-Bold', fontSize: 13, marginTop: 10}}> Listar </Text>
-                </View>
-            </TouchableOpacity>
+        <Icons/>
+        <View style={{width: '80%', paddingTop: 25}}>
+            <Text style={styles.title}>
+                Alunos recentes
+            </Text>
         </View>
-         {/* <Text>{nome}</Text>
-         <Text>{idade}</Text> */}
+        <FlatList 
+            data = {alunos}
+            numColumns= {2}
+            keyExtractor= {(item) => item.key}
+            renderItem = {({item}) => 
+                <listarAluno/>
+            }
+        />
      </View>
 
 );
@@ -75,27 +60,8 @@ return(
 }
 
 const styles = StyleSheet.create({
-    container:{
-        width: '80%',
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        paddingTop: 30
-    },
-    containerIcon:{
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    icon:{
-        backgroundColor: 'linear-gradient(180deg, rgba(114, 12, 247, 0.3) 0%, rgba(37, 0, 224, 0.5) 100%)',
-        boxShadow: '0px 0px 20px rgba(0, 0, 0, 0.08)',
-        width: '7vh',
-        height: '7vh',
-        alignItems:"center",
-        justifyContent: 'center',
-        borderRadius: 50,     
-        
-    }
-
-}
-)
+    title: {
+        fontFamily: 'Trap-Bold',
+        fontSize: 21
+    },  
+})
