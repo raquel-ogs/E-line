@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import { StyleSheet, TextInput, TouchableOpacity, View , Text, ImageBackground } from 'react-native';
 import firebase from '../../../config';
+import HeaderBack from '../../components/header-back';
 
 export default function Cadastrar(){
 
@@ -26,19 +27,22 @@ export default function Cadastrar(){
     }
 
     return (
+
     <View style={styles.container}>
         <View style={styles.fundo}>
-            {/* <ImageBackground style={{
+            <ImageBackground style={{
                 width: '100%',
-                height: '100%'
+                height: '100%',
+                alignItems: 'center'
             }}
             imageStyle={{
-                    marginTop: '4vh',
+                    marginTop: '-5.5vh',
                     width:'100%',
-                    height: '70%',
-                    }}
-                    source={require('./../../img/Vector.png')}> */}
-                <View style={{width: '100%', alignItems:'center'}}>    
+                    height: '25%',
+            }}
+            source={require('./../../img/Vector_3.png')}>
+                <HeaderBack/>
+                <View style={{width: '85%', padding: 15}}>    
                     <Text style ={styles.subtitle}> Nome completo </Text>
                     <TextInput style={styles.input} 
                     placeholder="Nome" onChangeText= {(texto) => setTurma(texto)}/>
@@ -57,11 +61,23 @@ export default function Cadastrar(){
                     <Text style ={styles.subtitle}> Imagem </Text>
                     <TextInput style={styles.input} 
                     placeholder="Digite o link da foto do aluno"  onChangeText= {(texto) => setImagem(texto)}/>
-                    <TouchableOpacity style={styles.btn} onPress={inserirAluno}>
-                        <Text style={{color: 'white', fontFamily: 'Trap-SemiBold'}}> Cadastrar </Text>
-                    </TouchableOpacity>
+                    <View style={{width: '100%', alignItems: 'center', padding: 10}}>
+                        <TouchableOpacity style={styles.btn} onPress={inserirAluno}>
+                            <Text style={{color: 'white', fontSize: 15, fontFamily: 'Trap-SemiBold', letterSpacing: '10%'}}> Cadastrar </Text>
+                        </TouchableOpacity>
+                    </View>
                 </View>
-            {/* </ImageBackground> */}
+                <ImageBackground style={{
+                width: '100%',
+                height: '100%',
+                alignItems: 'center'
+                }}
+                imageStyle={{
+                        width:'100%',
+                        height: '15%',
+                }}
+                source={require('./../../img/Vector_5.png')}/>
+            </ImageBackground>
         </View>
     </View>
     );
@@ -83,10 +99,10 @@ const styles = StyleSheet.create({
     },
     input: {
         height: 45,
-        width: '70%',
+        width: '90%',
         margin: 12,
         borderWidth: 1.5,
-        borderRadius: 45/5,
+        borderRadius: 45/4,
         padding: 10,
         borderColor: '#DCDCDC',
         fontFamily: 'Trap-Light',
@@ -94,9 +110,9 @@ const styles = StyleSheet.create({
         
     },
     btn:{
-        height: 45,
-        width: '70%',
-        borderRadius: 45/5,
+        height: 40,
+        width: '75%',
+        borderRadius: 40/4,
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: '#720CF7',

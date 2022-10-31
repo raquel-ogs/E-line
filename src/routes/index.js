@@ -40,7 +40,7 @@ export default function App() {
             }
           }}
           />
-          <Tab.Screen name ="Alunos" component ={Cadastrar}
+          <Tab.Screen name ="Alunos" component ={Alunos}
             options = 
             {{tabBarIcon: ({color,size}) => {
               return <MaterialIcons name="person-outline" size={35} color={color} />

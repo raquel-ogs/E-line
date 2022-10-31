@@ -1,24 +1,21 @@
-import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 
 export default function listarAluno(){
     return(
-        <TouchableOpacity style={styles.containerAluno}>
-            <View>
+            <TouchableOpacity style={styles.containerAluno}>
                 <View>
                     <Text style={styles.subtitleAlunos}>
-                        3°QUi
+                        34r34
                     </Text>
                     <Text style={styles.titleAlunos}>
-                         Kellen Neves
+                      4334
                     </Text>
                 </View>
-            </View>
-        </TouchableOpacity>
+            </TouchableOpacity>
     );
 }
 
-const styles = StyleSheet.create ({
+const styles = StyleSheet.create({
     containerAluno: {
         padding: 2,
         marginTop: 15,
