@@ -1,8 +1,6 @@
-import { StyleSheet, Text, View } from 'react-native';
 import Routes from './StackRoutes'
 import Novidades from '../pages/notifications/'
 import Alunos from '../pages/students/'
-import Cadastrar from '../pages/students_signup'
 import Conta from '../pages/account';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons, Octicons, MaterialIcons, MaterialCommunityIcons } from '@expo/vector-icons'; 
@@ -12,7 +10,8 @@ export default function App() {
   return (
       <Tab.Navigator 
         initialRouteName='Home'
-        screenOptions={{headerShown:false,
+        screenOptions={{
+          headerShown:false,
           tabBarShowLabel:true,
           tabBarLabelStyle:{
             fontFamily: 'Trap-Medium',
@@ -53,7 +52,7 @@ export default function App() {
             } 
           }}
           />
-      </Tab.Navigator>   
+      </Tab.Navigator>
 
 
 

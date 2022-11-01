@@ -45,10 +45,10 @@ export default function Cadastrar(){
                 <View style={{width: '85%', padding: 15}}>    
                     <Text style ={styles.subtitle}> Nome completo </Text>
                     <TextInput style={styles.input} 
-                    placeholder="Nome" onChangeText= {(texto) => setTurma(texto)}/>
+                    placeholder="Nome" onChangeText= {(texto) => setNome(texto)}/>
                     <Text style ={styles.subtitle}> Turma </Text>
                     <TextInput style={styles.input} 
-                    placeholder="Turma" onChangeText= {(texto) => setNome(texto)}/>
+                    placeholder="Turma" onChangeText= {(texto) => setTurma(texto)}/>
                     <Text style ={styles.subtitle}> Nota 1 </Text>
                     <TextInput style={styles.input} 
                     placeholder="Nota 1"  onChangeText= {(texto) => setNota1(texto)}/>
@@ -106,7 +106,7 @@ const styles = StyleSheet.create({
         padding: 10,
         borderColor: '#DCDCDC',
         fontFamily: 'Trap-Light',
-        fontSize: 13
+        fontSize: 14
         
     },
     btn:{
