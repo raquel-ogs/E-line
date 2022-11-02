@@ -3,7 +3,7 @@ import { useNavigation } from "@react-navigation/native";
 import {View,Text,StyleSheet, TouchableOpacity} from 'react-native';
 import { Feather} from '@expo/vector-icons';
 
-export default function HeaderBack(){
+export default function HeaderStudents(){
     const navigate = useNavigation();
 
     function navigateBack() {
@@ -12,10 +12,7 @@ export default function HeaderBack(){
 
     return(
         <View style={styles.header}>
-            <TouchableOpacity onPress={navigateBack}>
-                <Feather name="arrow-left" size={32} color="black" />
-            </TouchableOpacity>
-            <Text style={styles.logo}> E-LINE </Text>
+            <Text style={styles.text}> Alunos </Text>
         </View>
 
     );
@@ -32,11 +29,11 @@ const styles = StyleSheet.create({
         backgroundColor: 'transparent'
 
     },
-    logo:{
-        fontFamily: 'Trap-Light',
-        fontSize: '25px',
-        color: 'black'
-        
+    text:{
+        position: 'absolute',
+        fontFamily: 'Poppins_700Bold',
+        fontSize: 20,
+        color: 'linear-gradient(90deg, rgba(37, 0, 224, 0.65) 0%, rgba(37, 0, 224, 0.65) 0.01%, rgba(89, 0, 235, 0.65) 100%)',                
     }
 
 })

@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     icon:{
-        backgroundColor: 'linear-gradient(180deg, rgba(114, 12, 247, 0.3) 0%, rgba(37, 0, 224, 0.5) 100%)',
+        backgroundColor: 'linear-gradient(180deg, rgba(114, 12, 247, 0.3) 0%, rgba(37, 0, 224, 0.05) 100%)',
         boxShadow: '0px 0px 20px rgba(0, 0, 0, 0.08)',
         width: '7vh',
         height: '7vh',

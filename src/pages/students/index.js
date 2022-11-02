@@ -1,15 +1,19 @@
 import React from 'react'
-
-import {View,Text} from 'react-native'
+import {View} from 'react-native'
+import Card from '../../components/card';
+import HeaderStudents from '../../components/header-students';
 
 export default function Alunos(){
 
 return(
 
     <View>
-
-    <Text> Alunos</Text>
-
+        <HeaderStudents/>
+        <Card
+            imagem={'dbdbo'}
+            nome={'dbdbo'}
+            turma={'dbdbo'}
+        />
     </View>
 
 

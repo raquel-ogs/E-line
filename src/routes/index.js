@@ -30,25 +30,25 @@ export default function App() {
           <Tab.Screen name = "Home" component={Routes} 
           options = 
           {{tabBarIcon: ({color}) => {
-            return <Octicons name="home" size={32} color={color}/>
+            return <Octicons name="home" size={'3.2vh'} color={color}/>
           }}}/>
 
           <Tab.Screen name = "Novidades" component={Novidades} options = {{
             tabBarIcon:({color,size}) => {
-              return   <MaterialCommunityIcons name="bell-outline" size={32} color={color} />
+              return   <MaterialCommunityIcons name="bell-outline" size={'3.2vh'} color={color} />
             }
           }}
           />
           <Tab.Screen name ="Alunos" component ={Alunos}
             options = 
             {{tabBarIcon: ({color,size}) => {
-              return <MaterialIcons name="person-outline" size={35} color={color} />
+              return <MaterialIcons name="person-outline" size={'3.5vh'} color={color} />
             } }}
           />
           <Tab.Screen name ="Conta" component ={Conta}
             options = 
             {{tabBarIcon: ({color,size}) => {
-            return <Ionicons name="ios-settings-outline" size={32} color={color} />
+            return <Ionicons name="ios-settings-outline" size={'3.2vh'} color={color} />
             } 
           }}
           />

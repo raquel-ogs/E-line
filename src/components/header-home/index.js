@@ -18,7 +18,7 @@ export default function Header(){
                     <View style={styles.info}>
                         <Text style={{
                             fontFamily: 'Trap-Light',
-                            fontSize: '2.8vh',
+                            fontSize: '1.5rem',
                             color: 'white',}}>
                             E-LINE
                         </Text>
@@ -31,7 +31,9 @@ export default function Header(){
                             }}/>
                         </TouchableOpacity>
                     </View>
-                    <View>
+                    <View style={{alignItems: 'center'}}>
+                        <TextInput style={styles.input} 
+                        placeholder="Pesquisar alunos" onChangeText= {(texto) => setNome(texto)} />
                     </View>
                 </ImageBackground>
             </View>
@@ -74,7 +76,18 @@ const styles = StyleSheet.create({
         borderRadius: '50%'
     },
     input:{
-        borderColor: '#200'
+        backgroundColor: 'white',
+        borderRadius: '50vh',
+        position: 'absolute',
+        width: '75%',
+        height: 50,
+        color: '#3C3C3C',
+        fontFamily: 'Trap-Light',
+        fontSize: '1rem',
+        marginTop: '2vh',
+        padding: 25,
+        textAlign: 'left',
+        dropShadow: '(0px 0px 20px rgba(0, 0, 0, 0.5))'    
     }
 });
 
