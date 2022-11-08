@@ -44,11 +44,11 @@ export default function Header(){
 const styles = StyleSheet.create({
     container: {
         width: "100%",
-        height: "25vh",
+        height: "27vh",
         backgroundColor: '#FCFCFC',
         boxShadow: '0px 0px 20px rgba(0, 0, 0, 0.15)',
-        borderBottomStartRadius: 40,
-        borderBottomEndRadius: 40        
+        borderBottomStartRadius: 50,
+        borderBottomEndRadius: 50       
     },
     fundo:{
         width: '100%',

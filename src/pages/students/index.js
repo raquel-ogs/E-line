@@ -1,18 +1,21 @@
 import React from 'react'
-import {View} from 'react-native'
-import Card from '../../components/card';
+import {View, FlatList} from 'react-native'
+import Card from '../../components/cardStudents';
 import HeaderStudents from '../../components/header-students';
 
 export default function Alunos(){
 
 return(
-
     <View>
         <HeaderStudents/>
-        <Card
-            imagem={'dbdbo'}
-            nome={'dbdbo'}
-            turma={'dbdbo'}
+        <FlatList
+        showsVerticalScrollIndicator={false}
+        data={alunos}
+        keyExtractor= {({item}) => item.key}
+        renderItem = { ({item}) => (
+            <Card data={item}/>
+        )}
+        
         />
     </View>
 

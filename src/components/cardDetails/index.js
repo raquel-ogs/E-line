@@ -1,10 +1,9 @@
 import React from 'react'
-import { StyleSheet, Text, View, Image, TouchableOpacity, ImageBackground} from 'react-native';
-import {MaterialIcons} from '@expo/vector-icons'
+import { StyleSheet, Text, View, Image, ImageBackground, } from 'react-native';
 
-export default function Card({imagem, nome, turma}){
+export default function Card({data}){
     return(
-        <TouchableOpacity style={styles.containerAluno} onPress={navigateToDetails}>
+        <View style={styles.containerAluno}>
             <ImageBackground style={{
             width: '100%',
             height: '100%',
@@ -17,22 +16,19 @@ export default function Card({imagem, nome, turma}){
         }} source={require('./../../img/Vector_6.png')}>
                 <View style={{flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center'}}>
                     <View>
-                        <Image style={{width: '10vh', height: '10vh', marginTop: '-1.2vh'}} source={require(`./../../img/${imagem}`)}/>
+                        <Image style={{width: '10vh', height: '10vh', marginTop: '-1.2vh'}} source={require(`./../../img/${data.imagem}`)}/>
                     </View>
                     <View>
                         <Text style={{ fontFamily: 'Trap-SemiBold', fontSize: 14}}>
-                            {turma} 
+                            {data.turma} 
                         </Text>
                         <Text style={{fontFamily: 'Trap-Bold', fontSize: '1.1rem', color: '#720CF7', marginTop: 3.5}}> 
-                            {nome}
+                            {data.nome}
                         </Text>
-                    </View>
-                    <View>
-                        <MaterialIcons name="keyboard-arrow-right" size={28} color="#720CF7" />
-                    </View>
+                    </View>                  
                 </View>
             </ImageBackground>
-        </TouchableOpacity>
+        </View>
     )
 };
 
