@@ -1,7 +1,13 @@
-import {Text, Image, ImageBackground, View, StyleSheet, TextInput} from 'react-native';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import { useNavigation } from '@react-navigation/native';
+import {StyleSheet, Text, Image, ImageBackground, View, TouchableOpacity, TextInput} from 'react-native';
 
 export default function Header(){
+    const navigation = useNavigation();
+    
+    function goAccount(){
+        navigation.navigate('Conta');
+    }
+
     return(
         <View style={styles.container}>
             <View style={styles.fundo}>
@@ -22,7 +28,7 @@ export default function Header(){
                             color: 'white',}}>
                             E-LINE
                         </Text>
-                        <TouchableOpacity style={styles.imgConta}>
+                        <TouchableOpacity style={styles.imgConta} onPress={goAccount}>
                             <Image source={require('./../../img/Character.png')} style={{
                                 width: '95%',
                                 height: '100%',
@@ -33,7 +39,7 @@ export default function Header(){
                     </View>
                     <View style={{alignItems: 'center'}}>
                         <TextInput style={styles.input} 
-                        placeholder="Pesquisar alunos" onChangeText= {(texto) => setNome(texto)} />
+                        placeholder="Pesquisar alunos"/>
                     </View>
                 </ImageBackground>
             </View>
@@ -84,7 +90,7 @@ const styles = StyleSheet.create({
         color: '#3C3C3C',
         fontFamily: 'Trap-Light',
         fontSize: '1rem',
-        marginTop: '2vh',
+        marginTop: '2.5rem',
         padding: 25,
         textAlign: 'left',
         dropShadow: '(0px 0px 20px rgba(0, 0, 0, 0.5))'    

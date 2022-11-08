@@ -67,16 +67,6 @@ export default function Cadastrar(){
                         </TouchableOpacity>
                     </View>
                 </View>
-                <ImageBackground style={{
-                width: '100%',
-                height: '100%',
-                alignItems: 'center'
-                }}
-                imageStyle={{
-                        width:'100%',
-                        height: '15%',
-                }}
-                source={require('./../../img/Vector_5.png')}/>
             </ImageBackground>
         </View>
     </View>

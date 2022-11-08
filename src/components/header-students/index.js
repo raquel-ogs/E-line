@@ -1,15 +1,7 @@
 import React from 'react';
-import { useNavigation } from "@react-navigation/native";
-import {View,Text,StyleSheet, TouchableOpacity} from 'react-native';
-import { Feather} from '@expo/vector-icons';
+import {View,Text,StyleSheet} from 'react-native';
 
 export default function HeaderStudents(){
-    const navigate = useNavigation();
-
-    function navigateBack() {
-        navigate.goBack();
-    }
-
     return(
         <View style={styles.header}>
             <Text style={styles.text}> Alunos </Text>

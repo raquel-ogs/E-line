@@ -1,10 +1,11 @@
 import { useNavigation } from '@react-navigation/native';
-import React,{useEffect, useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import { StyleSheet, ScrollView, Text, View, FlatList,} from 'react-native';
 import firebase from '../../../config'
 import Header from '../../components/header-home';
 import Icons from '../../components/icons';
 import Card from '../../components/cardStudents';
+
 export default function Home(){
 
 const navigation = useNavigation();
@@ -40,7 +41,7 @@ function goDetails(){
 
 return(
     <ScrollView>
-     <View style = {{alignItems:'center'}}>
+     <View style = {{alignItems:'center', backgroundColor: '#FCFCFC'}}>
         <Header/>
         <Icons/>
         <View style={{width: '80%', paddingTop: 30}}>
@@ -49,15 +50,15 @@ return(
             </Text>
         </View>
         <View>
-        <FlatList 
-            showsVerticalScrollIndicator = {false}
-            data = {alunos}
-            keyExtractor= { (item) => item.Key}
-            renderItem = { ({item}) => (
-                <Card data={item}/>
-            )
-        }
-        />
+            <FlatList 
+                showsVerticalScrollIndicator = {false}
+                data = {alunos}
+                keyExtractor= { (item) => item.Key}
+                renderItem = { ({item}) => (
+                    <Card data={item}/>
+                )
+            }
+            />
         </View> 
      </View>
      </ScrollView>

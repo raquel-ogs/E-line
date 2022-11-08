@@ -24,21 +24,21 @@ return(
             source={require('./../../img/Vector_3.png')}>
                 <HeaderBack/>
                 <Card data={route.params?.dados}/>
-                <View style={{width: '85%', padding: 20}}>    
+                <View style={{width: '80%', padding: 20}}>    
                     <Text style ={styles.subtitle}> Nome completo </Text>
                         <TextInput style={styles.input} 
-                        placeholder="Nome" value={route.params?.dados.nome}/>
+                        placeholder={route.params?.dados.nome}/>
                     <Text style ={styles.subtitle}> Nota 1 </Text>
                         <TextInput style={styles.input} 
-                        placeholder="Nome" value={route.params?.dados.nota1}/>
+                        placeholder={route.params?.dados.nota1}/>
                     <Text style ={styles.subtitle}> Nota 2 </Text>
                         <TextInput style={styles.input} 
-                        placeholder="Nome" value={route.params?.dados.nota2}/>
+                        placeholder={route.params?.dados.nota2}/>
                     <Text style ={styles.subtitle}> Nota 3 </Text>
                         <TextInput style={styles.input} 
-                        placeholder="Nome" value={route.params?.dados.nota3}/>
+                        placeholder={route.params?.dados.nota3}/>
                 </View>
-                <View style={{width: '100%', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', padding: 5}}>
+                <View style={{width: '95%', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', padding: 5}}>
                         <TouchableOpacity style={styles.btn}>
                             <Text style={{color: 'white', fontSize: 15, fontFamily: 'Trap-SemiBold', letterSpacing: '10%'}}> Atualizar </Text>
                         </TouchableOpacity>
@@ -46,16 +46,6 @@ return(
                             <Text style={{color: 'white', fontSize: 15, fontFamily: 'Trap-SemiBold', letterSpacing: '10%'}}> Excluir </Text>
                         </TouchableOpacity>
                 </View>
-                <ImageBackground style={{
-                width: '100%',
-                height: '100%',
-                alignItems: 'center'
-                }}
-                imageStyle={{
-                        width:'100%',
-                        height: '15%',
-                }}
-                source={require('./../../img/Vector_5.png')}/>
             </ImageBackground>
         </View>
     </View>
@@ -74,31 +64,21 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     subtitle:{
+        textAlign: 'left',
         fontFamily: 'Trap-SemiBold',
         fontSize: 16
     },
     input: {
         height: 45,
-        width: '90%',
+        width: '95%',
         margin: 12,
         borderWidth: 1.5,
         borderRadius: 45/4,
         padding: 10,
+        alignItems: 'center',
         borderColor: '#DCDCDC',
         fontFamily: 'Trap-Light',
         fontSize: 14
-    },
-    txt: {
-        height: 45,
-        width: '90%',
-        margin: 12,
-        borderWidth: 1.5,
-        borderRadius: 45/4,
-        padding: 10,
-        borderColor: '#DCDCDC',
-        fontFamily: 'Trap-Light',
-        fontSize: 14
-        
     },
     btn:{
         height: 40,
